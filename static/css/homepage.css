@@ -1,8 +1,14 @@
 body{
-    background-color: blue;
-/*    background: url('/static/img/cart_in_grocery_store.jpg') repeat 0 0;
-    background-size: cover;*/
+    background: url('/static/img/cart_in_grocery_store.jpg') repeat 0 0;
+    background-size: cover;
 
 }
 
+.text-center{
+    margin-top: 15%;
 
+}
+
+.search-bar{
+    
+}

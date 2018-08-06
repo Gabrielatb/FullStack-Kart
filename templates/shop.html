@@ -1,25 +1,23 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-    <link rel="stylesheet"
-          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
-<!--     <link rel="stylesheet" href="/static/css/homepage.css"> -->
-    <title>Shop Now!</title>
-</head>
+{% block title %}Shop Now!{% endblock %}
 
-<body>
+{% block head%}
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    {{ super() }}
+{% endblock%}
 
 
+{% block body%}
 
-<div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <h1>Hello!<h1>
-
-
-    </div>
+<div class="search-bar">
+  <div class="col-lg-5">
+    <div class="input-group input-group-lg">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Add!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
 </div>
-
-
-
-</body>
-</html>
+{% endblock%}
