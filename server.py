@@ -20,7 +20,7 @@ def home_page():
 
 
 @app.route("/kart")
-def autcomplete():
+def kart():
     """provides list for item searched """
 
 
@@ -41,21 +41,7 @@ def search_results():
         available_commodities.extend(item)
     commodities = sorted(set(available_commodities))
     return jsonify(commodities)
-#     keyword = requests.get('keyword')
 
-#     json_string = open("items.json").read()
-#     data = json.loads(json_string)
-    
-#     available_commodities = []
-
-#     for item in data:
-#             available_commodities.append(item)
-
-#     commodities = sorted(available_commodities)
-#     return jsonify(commodities)
-
-
-#     return render_template("shop.html", data=data)
 
 @app.route("/kartitem", methods=['POST'])
 def add_item():
@@ -73,8 +59,15 @@ def add_item():
             db.session.add(item_object)
      
     db.session.commit()
-    
-    return render_template("shop.html")
+
+
+    all_items = Kart.query.all()
+  
+    return render_template("shop.html", all_items=all_items)
+
+@app.route("/submit", methods=['POST'])
+def endpoint():
+
 
 
 

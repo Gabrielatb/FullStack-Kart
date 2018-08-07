@@ -37,19 +37,9 @@
   </div>
     </div>
 </form>
+<div id="results"></div>
 
    
-<ol>
-    {% for item in all_items %}
-
-    
-        {{ item}}
-        {{ all_items}}
-    {% endfor %}
-</ol>
-
-
-
   <table id = "table" class="table" style="margin-top: 10%;">
     <thead>
       <tr>
@@ -60,31 +50,17 @@
     <tbody>
         {% for item in all_items %}
         <tr>
-            <td>{{ item.item_name}}</td>
-            <td>{{ item.item_quantity }}</td>
+            <td>{{ item.groceryitems.item_name}}</td>
+            <td>{{ item.quantity}}</td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 
 
-<script>
-// Displays search results underneath the search form w/out reloading!
-$(document).ready(function() {
-    document.getElementById("search").onclick = function (event) {
-        event.preventDefault();
-        var data= $('form').serialize(); //serializes form data for use
-        console.log(data)
-        $.post('/kartitem', data, function (result){
-            $("#table").html(result);
-            //Add failure clauses for no keyword && no search by values!
-        });
-        //on click, after loading of results, scrollls to top of #results div
-        $('html, body').animate({
-        scrollTop: $("#table").offset().top}, 1500);
-    };
-});
-</script>
+
+
+
 
 
 {% endblock%}

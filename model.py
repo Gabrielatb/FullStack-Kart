@@ -14,7 +14,7 @@ class Grocery(db.Model):
 
         """Represent grocery item """
 
-        return "<grocery_item_id={} item_name={}".format(
+        return "<grocery_item_id={} item_name={}>".format(
 
             self.grocery_item_id, self.item_name)
 
@@ -35,7 +35,7 @@ class Kart(db.Model):
 
         """Represent grocery item """
 
-        return "<grocery_item_id={} item_name={}".format(
+        return "<grocery_item_id={} item_quantity={}".format(
 
             self.kart_item_id, self.quantity)
 
