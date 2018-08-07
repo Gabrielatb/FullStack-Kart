@@ -1,3 +1,10 @@
 .search-bar{
-    text-align: center;
+
+   width:800px;
+}
+
+body{
+  /*  background: url('/static/img/cart_in_grocery_store.jpg') repeat 0 0;*/
+    background-size: cover;
+
 }
