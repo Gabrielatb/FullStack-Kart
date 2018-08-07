@@ -65,10 +65,19 @@ def add_item():
   
     return render_template("shop.html", all_items=all_items)
 
-@app.route("/submit", methods=['POST'])
-def endpoint():
+@app.route("/submit")
+def postdata():
 
 
+    all_items = Kart.query.all()
+    dict_ = {}
+    for item in all_items:
+        dict_[item.groceryitems.item_name] = item.quantity
+
+
+    r = requests.post('https://kart.example.com/submit', data=dict_)
+    print r.text
+    return r.status_code
 
 
 
