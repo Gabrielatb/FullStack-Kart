@@ -54,45 +54,45 @@ def seed_data():
     English_breakfast_tea = Grocery(item_name="English breakfast tea")
     green_tea = Grocery(item_name="green tea")
     cherry_chapstick = Grocery(item_name="cherry chapstick")
-      # "sirloin steak",
-      # "New York strip steak",
-      # "chicken nuggets",
-      # "sparkling water",
-      # "coconut water",
-      # "coconut flakes",
-      # "taco mix",
-      # "trailmix",
-      # "spam",
-      # "beef broth",
-      # "chicken soup",
-      # "tomato soup",
-      # "cherry tomatoes",
-      # "beefsteak tomatoes",
-      # "sun-dried tomatoes",
-      # "sunscreen",
-      # "sunblock",
-      # "shaving cream",
-      # "whipped cream",
-      # "creamy tomato soup",
-      # "chocolate candy bar",
-      # "chocolate-covered cherries",
-      # "milk",
-      # "chocolate milk",
-      # "protein bar",
-      # "bar soap",
-      # "pickles",
-      # "pickled fish",
-      # "olive oil",
-      # "olives",
-      # "coconut oil",
-      # "avocado oil",
-      # "zucchini",
-      # "zuchini",
-      # "peanut butter",
-      # "almond butter",
-      # "peanuts",
-      # "macadamia nuts",
-      # "butter"
+    sirloin_steak = Grocery(item_name="sirloin steak")
+    New_York_strip_steak = Grocery(item_name="New York strip steak")
+    chicken_nuggets = Grocery(item_name="chicken nuggets")
+    sparkling_water = Grocery(item_name="sparkling water")
+    coconut_water = Grocery(item_name="coconut water")
+    coconut_flakes = Grocery(item_name="coconut flakes")
+    taco_mix = Grocery(item_name="taco mix")
+    trail_mix = Grocery(item_name="trailmix")
+    spam = Grocery(item_name="spam")
+    beef_broth = Grocery(item_name="beef broth")
+    chicken_soup = Grocery(item_name="chicken soup")
+    tomato_soup = Grocery(item_name="tomato soup")
+    cherry_tomatoes = Grocery(item_name="cherry tomatoes")
+    beefsteak_tomatoes = Grocery(item_name="beefsteak tomatoes")
+    sun_dried_tomatoes = Grocery(item_name="sun-dried tomatoes")
+    sunblock_sunscreen = Grocery(item_name="sunscreen")
+    sunblock = Grocery(item_name="sunblock")
+    shaving_cream = Grocery(item_name="shaving cream")
+    whipped_cream = Grocery(item_name="whipped cream")
+    creamy_tomato_soup = Grocery(item_name="creamy tomato soup")
+    chocolate_candy_bar = Grocery(item_name="chocolate candy bar")
+    chocolate_covered_cherries = Grocery(item_name="chocolate-covered cherries")
+    milk = Grocery(item_name="milk")
+    chocolate_milk = Grocery(item_name="chocolate milk")
+    protein_bar = Grocery(item_name="protein bar")
+    bar_soap = Grocery(item_name="bar soap")
+    pickles = Grocery(item_name="pickles")
+    pickled_fish = Grocery(item_name="pickled fish")
+    olive_oil = Grocery(item_name="olive oil")
+    olives = Grocery(item_name="olives")
+    coconut_oil = Grocery(item_name="coconut oil")
+    avocado_oil = Grocery(item_name="avocado oil")
+    zucchini = Grocery(item_name="zucchini")
+    zuchini = Grocery(item_name="zuchini")
+    peanut_butter = Grocery(item_name="peanut butter")
+    almond_butter = Grocery(item_name="almond butter")
+    peanuts = Grocery(item_name="peanuts")
+    macadamia_nuts = Grocery(item_name="macadamia nuts")
+    butter = Grocery(item_name="butter")
 
     db.session.add_all([cherimoya, cherry, pineapple, pine_nuts, almonds, milk, almond_milk,
                        broccoli, broccolini, cherry_pie, blueberry_pie, blueberries, apples,
@@ -102,9 +102,24 @@ def seed_data():
                        dishsoap, hand_sanitizer, paper_plates, paper_towels, raspberries,
                        cat_food, tuna_fish, kibbles, English_breakfast_tea, green_tea,
                        cherry_chapstick, oranges, orange_bandana, orangutan_stuffed_animal,
-                       diapers, tea_tree_shampoo, hand_soap,
-                       dishsoap,hand_sanitizer, paper_plates, paper_towels, raspberries, cat_food, tuna_fish, kibbles,
-                       English_breakfast_tea, green_tea, cherry_chapstick])
+                       diapers, tea_tree_shampoo, hand_soap, dishsoap, hand_sanitizer, paper_plates,
+                       paper_towels, raspberries, cat_food, tuna_fish, kibbles,
+                       English_breakfast_tea, green_tea, cherry_chapstick, sirloin_steak,
+                        New_York_strip_steak, chicken_nuggets , sparkling_water, coconut_water, coconut_flakes,
+                        taco_mix ,trail_mix, spam, beef_broth ,chicken_soup tomato_soup,
+                        cherry_tomatoes,beefsteak_tomatoes ,sun_dried_tomatoes ,sunblock_sunscreen ,sunblock,
+                        shaving_cream, whipped_cream ,creamy_tomato_soup ,chocolate_candy_bar ,
+                        chocolate_covered_cherries ,milk ,chocolate_milk ,protein_bar,bar_soap ,
+                        pickles, pickled_fish ,olive_oil ,olives ,coconut_oil ,avocado_oil ,zucchini ,zuchini,peanut_butter,
+                        almond_butter, peanuts, macadamia_nuts, butter])
+
+
+
+
+
+
+
+
     db.session.commit()
 
 if __name__ == "__main__":

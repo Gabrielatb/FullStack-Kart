@@ -1,10 +1,25 @@
+body{
+
+    background: url('/static/img/colorful_food.jpg')repeat 0 0;
+    background-size: cover;
+}
+
+
+
 .search-bar{
 
    width:800px;
 }
 
-body{
-  /*  background: url('/static/img/cart_in_grocery_store.jpg') repeat 0 0;*/
-    background-size: cover;
 
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.table{
+
+    font-size: 30px;
+    font-weight: bold;
 }
