@@ -67,7 +67,7 @@ class Kart(unittest.TestCase):
         """Suggestions in search bar"""
 
         result = self.client.post("/kartitem",
-                                  data={'item_searched': "eggs"},
+                                  data={'item_searched': "cherimoya"},
                                     follow_redirects=True)
         self.assertEqual(result.status_code, 200)
         self.assertIn("<td>cherimoya</td>", result.data)
