@@ -71,7 +71,7 @@ class Kart(unittest.TestCase):
                                     follow_redirects=True)
         self.assertEqual(result.status_code, 200)
         self.assertIn("<td>cherimoya</td>", result.data)
-        self.assertIn("<td>1</td>", result.data)
+        self.assertIn("<td>2</td>", result.data)
 
     def tearDown(self):
         """Todo after each test."""
