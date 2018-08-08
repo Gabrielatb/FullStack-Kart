@@ -47,16 +47,24 @@ def search_results():
 def add_item():
 
     item_searched = request.form['item_searched']
-    grocery_item = Grocery.query.filter_by(item_name=item_searched).all()
-    for item in grocery_item:
-        if Kart.query.filter_by(kart_item_id=item.grocery_item_id).all():
-            item = Kart.query.filter_by(kart_item_id=item.grocery_item_id).all()
-            for i in item:
-                i.quantity +=1
-        else:
-            item_object = Kart(kart_item_id=item.grocery_item_id, quantity=1) 
 
-            db.session.add(item_object)
+    if Grocery.query.filter_by(item_name=item_searched).all():
+        grocery_item = Grocery.query.filter_by(item_name=item_searched).all()
+        for item in grocery_item:
+            if Kart.query.filter_by(kart_item_id=item.grocery_item_id).all():
+                item = Kart.query.filter_by(kart_item_id=item.grocery_item_id).all()
+                for i in item:
+                    i.quantity +=1
+            else:
+                item_object = Kart(kart_item_id=item.grocery_item_id, quantity=1) 
+
+                db.session.add(item_object)
+    else:
+        item = Grocery(item_name=item_searched)
+        db.session.add(item)
+        db.session.commit()
+
+        item_object = Kart(kart_item_id=item.grocery_item_id, quantity=1)
      
     db.session.commit()
 
@@ -76,7 +84,6 @@ def postdata():
 
 
     r = requests.post('https://kart.example.com/submit', data=dict_)
-    print r.text
     return r.status_code
 
 
@@ -84,7 +91,6 @@ def postdata():
 if __name__ == "__main__":
 
     connect_to_db(app)
-
 
     app.run(port=5000, host='0.0.0.0', debug=True)
     
