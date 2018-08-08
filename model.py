@@ -23,7 +23,7 @@ class Kart(db.Model):
 
     __tablename__ = 'kart'
 
-    kart_item_id = db.Column(db.Integer,  db.ForeignKey('groceryitems.grocery_item_id'), primary_key=True)
+    kart_item_id = db.Column(db.Integer, db.ForeignKey('groceryitems.grocery_item_id'),  primary_key=True)
     quantity = db.Column(db.Integer, nullable=False)
 
 
