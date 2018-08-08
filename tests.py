@@ -54,22 +54,31 @@ class Homepage(unittest.TestCase):
 
 class Kart(unittest.TestCase):
     def setUp(self):
-    """Todo before every test"""
+        """Todo before every test"""
 
-    self.client = app.test_client()
-    app.config['TESTING'] = True
-    # Connect to test database
-    connect_to_db(app)
-    db.create_all()
+        self.client = app.test_client()
+        app.config['TESTING'] = True
+        # Connect to test database
+        connect_to_db(app)
+        db.create_all()
 
 
+    def add_item(self):
+        """Suggestions in search bar"""
 
+        result = self.client.post("/kartitem",
+                                  data={'item_searched': "eggs"},
+                                    follow_redirects=True)
+        self.assertEqual(result.status_code, 200)
+        self.assertIn("<td>eggs</td>", result.data)
+        self.assertIn("<td>7</td>", result.data)
 
     def tearDown(self):
-    """Todo after each test."""
+        """Todo after each test."""
+        db.session.close()
+        db.drop_all()
 
-    db.session.close()
-    db.drop_all()
+        
 
 
 
